@@ -42,9 +42,13 @@ p {
 
 
 section#wedding-details {
-    min-height:100%;
+    /*min-height:100%;*/
     background-color: #5f4389;
     color: white;
+}
+
+table#wedding-details-table {
+    margin-bottom: 20px;
 }
 
 table#wedding-details-table tr td {
@@ -53,6 +57,17 @@ table#wedding-details-table tr td {
 
 table#wedding-details-table tr {
     vertical-align: top;
+}
+
+#wedding-details-image {
+    height: 700px;
+    background-image: url("../img/engagement.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#img-2 {
+    width: 100%;
 }
 
 

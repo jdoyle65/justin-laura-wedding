@@ -62,7 +62,8 @@
             </table>
         </div>
     </div>
-
+    <img id="img-2" src="img/engagement_2.png" alt="">
+<!--    <div id="wedding-details-image"></div>-->
 </section>
 
 
