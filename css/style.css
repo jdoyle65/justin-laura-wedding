@@ -1,0 +1,95 @@
+html, body {
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 { font-size: 64px;}
+h2 { font-size: 52px;}
+h3 { font-size: 48px;}
+h4 { font-size: 32px;}
+h5 { font-size: 24px;}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 24px;
+}
+
+#hero-section {
+    height: 100%;
+    margin:0;
+    padding:0;
+    background-color: white;
+}
+
+#banner-image {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 2%;
+}
+
+#banner-image-wrapper {
+    height: 90%
+}
+
+#hero-arrow-button {
+    font-size: 50px;
+}
+
+
+section#wedding-details {
+    min-height:100%;
+    background-color: #5f4389;
+    color: white;
+}
+
+table#wedding-details-table tr td {
+    padding-left: 10px;
+}
+
+table#wedding-details-table tr {
+    vertical-align: top;
+}
+
+
+
+
+
+
+
+
+
+
+/* Utility Classes */
+
+.text-purple {
+    color: #5f4389;
+}
+
+.text-lt-purple {
+    color: #a668eb;
+}
+
+.text-yellow {
+    color: #ffee36;
+}
+
+.animate-bob {
+    position: relative;
+    top:0;
+    animation-name: bob;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes bob {
+    0% {top: 0}
+    10% {top: 10px}
+    20% {top: 0}
+    100% {top: 0}
+}
