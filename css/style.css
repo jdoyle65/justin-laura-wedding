@@ -19,6 +19,18 @@ p {
     font-size: 24px;
 }
 
+#rsvp-button-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    padding-right: 25px;
+}
+
+#rsvp-button-wrapper a:hover {
+    text-decoration: none;
+}
+
 #hero-section {
     height: 100%;
     margin:0;
@@ -59,6 +71,11 @@ table#wedding-details-table tr {
     vertical-align: top;
 }
 
+table#wedding-details-table tr > td,
+table#wedding-details-table tr > th {
+    padding-bottom: 10px;
+}
+
 #wedding-details-image {
     height: 700px;
     background-image: url("../img/engagement.png");
@@ -80,6 +97,9 @@ table#wedding-details-table tr {
 
 
 /* Utility Classes */
+.text-white {
+    color: white;
+}
 
 .text-purple {
     color: #5f4389;

@@ -13,6 +13,12 @@
 </head>
 <body>
 
+<div id="rsvp-button-wrapper">
+    <a id="rsvp-button" href="rsvp.php" class="text-purple">
+        <p>RSVP</p>
+    </a>
+</div>
+
 
 <section id="hero-section" class="text-center">
     <div id="banner-image-wrapper">
@@ -28,7 +34,7 @@
 <section id="wedding-details">
     <div class="container">
         <div class="row">
-            <h1 style="margin-bottom: 75px;">Justin & Laura Get Married</h1>
+            <h1 style="margin-top:40px;margin-bottom: 75px;">Justin & Laura Get Married</h1>
 
             <table id="wedding-details-table">
                 <tbody>
@@ -62,8 +68,8 @@
             </table>
         </div>
     </div>
-    <img id="img-2" src="img/engagement_2.png" alt="">
-<!--    <div id="wedding-details-image"></div>-->
+    <img id="img-2" src="img/front-steps-sm.jpg" alt="">
+    <!--    <div id="wedding-details-image"></div>-->
 </section>
 
 
