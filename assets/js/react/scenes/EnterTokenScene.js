@@ -1,5 +1,7 @@
 import React from 'react'
 
+import WeddingApi from '../httpApi'
+
 export default class EnterTokenScene extends React.Component {
 
     constructor(props) {
@@ -31,11 +33,7 @@ export default class EnterTokenScene extends React.Component {
     checkUserToken(userToken) {
         if(userToken === 'valid') {
             window.localStorage.setItem('userToken', userToken);
-            return Promise.resolve({ userData: {
-                name: 'Justin Doyle',
-                guests: [],
-                allowedGuests: 2
-            } });
+            return WeddingApi.user();
         } else {
             return Promise.reject();
         }

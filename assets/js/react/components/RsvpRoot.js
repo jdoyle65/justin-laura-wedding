@@ -3,6 +3,8 @@ import React from 'react';
 import EnterTokenScene from '../scenes/EnterTokenScene';
 import DashboardScene from '../scenes/DashboardScene';
 
+import WeddingApi from '../httpApi'
+
 export default class RsvpRoot extends React.Component {
 
     constructor() {
@@ -41,10 +43,16 @@ export default class RsvpRoot extends React.Component {
                 }
             });
         } else {
-            const newStore = Object.assign({}, this.state.store, {userToken: userToken});
+            WeddingApi.user().then(response => {
+                const newStore = Object.assign({}, this.state.store, {
+                    userToken: userToken,
+                    user: response.userData
+                });
 
-            this.setState({
-                store: newStore
+                this.setState({
+                    route: 'dashboard',
+                    store: newStore
+                });
             });
         }
     }
