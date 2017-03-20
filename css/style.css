@@ -16,7 +16,25 @@ h5 { font-size: 24px;}
 
 p {
     font-family: 'Raleway', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
+}
+
+input {
+    color: black;
+}
+
+button {
+    color: black;
+}
+
+.dark-on-light {
+    background-color: white;
+    color: #5f4389;
+}
+
+.light-on-dark {
+    background-color: #5f4389;
+    color: white;
 }
 
 #rsvp-button-wrapper {
@@ -25,17 +43,45 @@ p {
     right: 0;
     padding: 10px;
     padding-right: 25px;
+    z-index: 1000;
 }
 
 #rsvp-button-wrapper a:hover {
     text-decoration: none;
 }
 
+#rsvp-button {
+    border-radius: 10px;
+    padding: 2px 15px 2px 15px;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+.rsvp-button-light, .rsvp-button-light a {
+    color: #5f4389;
+    background-color: white;
+}
+.rsvp-button-light:hover, .rsvp-button-light a:hover {
+    color: white;
+    background-color: #5f4389;
+}
+
+.rsvp-button-dark {
+    border: 1px solid white;
+}
+.rsvp-button-dark, .rsvp-button-dark a {
+    color: white;
+    background-color: #5f4389;
+}
+.rsvp-button-dark:hover, .rsvp-button-dark a:hover {
+    color: #5f4389;
+    background-color: white;
+}
+
+
 #hero-section {
     height: 100%;
     margin:0;
     padding:0;
-    background-color: white;
 }
 
 #banner-image {
@@ -45,7 +91,7 @@ p {
 }
 
 #banner-image-wrapper {
-    height: 90%
+    height: 100%
 }
 
 #hero-arrow-button {
@@ -54,9 +100,7 @@ p {
 
 
 section#wedding-details {
-    /*min-height:100%;*/
-    background-color: #5f4389;
-    color: white;
+
 }
 
 table#wedding-details-table {
@@ -76,17 +120,40 @@ table#wedding-details-table tr > th {
     padding-bottom: 10px;
 }
 
+
 #wedding-details-image {
-    height: 700px;
-    background-image: url("../img/engagement.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+ width: 100%;
 }
 
-#img-2 {
-    width: 100%;
+@media(max-width: 768px) {
+    section#wedding-details h1,
+    table#wedding-details-table
+    {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
 }
 
+#accommodations-section {
+    padding-bottom: 3em;
+}
+
+.no-style-list {
+    list-style: none;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: .5em;
+}
+
+footer p {
+    margin-right: 1em;
+    padding-bottom: 0;
+}
 
 
 
@@ -113,6 +180,17 @@ table#wedding-details-table tr > th {
     color: #ffee36;
 }
 
+.text-small {
+    font-size: 14px;
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 .animate-bob {
     position: relative;
     top:0;
@@ -123,8 +201,16 @@ table#wedding-details-table tr > th {
 }
 
 @keyframes bob {
-    0% {top: 0}
-    10% {top: 10px}
-    20% {top: 0}
-    100% {top: 0}
+0% {top: 0}
+10% {top: 10px}
+20% {top: 0}
+100% {top: 0}
+}
+
+.mb-5 {
+    margin-bottom: 5px;
+}
+
+.shadow {
+    box-shadow: 0 10px 15px rgba(0,0,0,.2);
 }

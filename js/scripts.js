@@ -28,16 +28,16 @@
         if(didScroll) {
             didScroll = false;
             var scrollTop = window.pageYOffset;
-            console.log(scrollTop);
-            console.log(detailsSection.offsetTop);
             switch(true) {
+                // Any cases where button is now on white
                 case (scrollTop >= 0 && scrollTop < detailsSection.offsetTop):
-                    removeClass('text-white', rsvpButton);
-                    addClass('text-purple', rsvpButton);
+                    removeClass('rsvp-button-dark', rsvpButton);
+                    addClass('rsvp-button-light', rsvpButton);
                     break;
+                // Any cases where button is now on purple
                 case (scrollTop >= detailsSection.offsetTop):
-                    removeClass('text-purple', rsvpButton);
-                    addClass('text-white', rsvpButton);
+                    removeClass('rsvp-button-light', rsvpButton);
+                    addClass('rsvp-button-dark', rsvpButton);
                     break;
             }
         }
@@ -46,29 +46,41 @@
 
     function addClass(theClass, element) {
         var classes = element.className.split(/\s+/);
+
         if(classes.indexOf(theClass) < 0) {
             classes.push(theClass);
         }
+
         element.className = classes.join(' ');
+
         return element;
     }
 
     function removeClass(theClass, element) {
         var classes = element.className.split(/\s+/);
-        var index = classList.indexOf(theClass);
+        var index = classes.indexOf(theClass);
 
         if(classes.indexOf(theClass) >= 0) {
-
+            classes = recursivelyRemoveClass(theClass, index, classes);
         }
 
-        classes.replace(theClass, '');
-        element.className = classes;
+        element.className = classes.join(' ');
 
         return element;
     }
 
     function recursivelyRemoveClass(theClass, index, classList) {
 
+        classList = classList
+            .splice(0, index)
+            .concat(classList.splice(index + 1, classList.length));
+
+        var newIndex = classList.indexOf(theClass);
+        if(newIndex >= 0) {
+            return recursivelyRemoveClass(theClass, newIndex, classList);
+        } else {
+            return classList;
+        }
     }
 
 
