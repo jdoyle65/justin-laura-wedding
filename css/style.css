@@ -138,6 +138,10 @@ table#wedding-details-table tr > th {
     padding-bottom: 3em;
 }
 
+#rsvp-section {
+    min-height: 90%;
+}
+
 .no-style-list {
     list-style: none;
 }

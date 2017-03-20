@@ -1,6 +1,7 @@
 import React from 'react';
 
 import EnterTokenScene from '../scenes/EnterTokenScene';
+import DashboardScene from '../scenes/DashboardScene';
 
 export default class RsvpRoot extends React.Component {
 
@@ -65,9 +66,9 @@ export default class RsvpRoot extends React.Component {
     updateStore(store, callback = () => {}) {
         const newStore = Object.assign({}, this.getStore(), store);
 
-        console.log(newStore);
-
-        this.setState({ store: newStore }, callback());
+        this.setState({ store: newStore }, () => {
+            callback();
+        });
     }
 
     buildStoreToPass() {
@@ -84,6 +85,7 @@ export default class RsvpRoot extends React.Component {
     buildRouterToPass() {
         return {
             go: (route, routeData = {}) => {
+                console.log(`Routing to ${route}`);
                 this.setState({
                     route: route,
                     routeData: routeData
@@ -99,6 +101,7 @@ export default class RsvpRoot extends React.Component {
         };
 
         switch(routeName) {
+            case 'dashboard': return <DashboardScene {...routeData} {...defaultProps} />;
             case 'enterToken': return <EnterTokenScene {...routeData} {...defaultProps} />;
             default: return <div>Invalid Route!!</div>;
         }

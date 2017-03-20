@@ -111,7 +111,13 @@
         <div class="row">
             <h1 style="margin-top:40px;margin-bottom: 75px;">RSVP</h1>
 
-            <div id="react-rsvp-root"></div>
+            <div id="react-rsvp-root">
+                <p class="text-yellow">
+                    If you can see this message, the RSVP system is not compatible
+                    with your browser. Please update your browser, or contact Justin
+                    or Laura by phone to RSVP.
+                </p>
+            </div>
 
         </div>
     </div>

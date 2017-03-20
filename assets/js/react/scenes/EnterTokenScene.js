@@ -16,10 +16,14 @@ export default class EnterTokenScene extends React.Component {
         this.checkUserToken(userToken)
             .then(response => {
                 this.props.store.update({
-                    userToken: userToken
+                    userToken: userToken,
+                    user: response.userData
+                }, () => {
+                    this.props.router.go('dashboard');
                 });
             })
             .catch(reject => {
+                console.log(reject);
                 console.log("Invalid user token...");
             })
     }
@@ -27,7 +31,11 @@ export default class EnterTokenScene extends React.Component {
     checkUserToken(userToken) {
         if(userToken === 'valid') {
             window.localStorage.setItem('userToken', userToken);
-            return Promise.resolve({ userData: {} });
+            return Promise.resolve({ userData: {
+                name: 'Justin Doyle',
+                guests: [],
+                allowedGuests: 2
+            } });
         } else {
             return Promise.reject();
         }
