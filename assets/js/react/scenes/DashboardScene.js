@@ -21,6 +21,26 @@ export default class DashboardScene extends React.Component {
         });
     }
 
+    deleteGuest(guestId) {
+        const store = this.props.store.get();
+        const user = store.user;
+        let guests = store.user.guests;
+
+        const guestIndex = store.user.guests.findIndex(g => g.id === guestId);
+        if(guestIndex < 0) {
+            return;
+        }
+
+        guests = guests
+            .slice(0, guestIndex)
+            .concat(guests.slice(guestIndex + 1, guests.length));
+
+
+        user.guests = guests;
+
+        this.props.store.update({user: user});
+    }
+
     render() {
         const store = this.props.store.get();
         const user = store.user;
@@ -30,8 +50,10 @@ export default class DashboardScene extends React.Component {
                 <h3>Welcome {user.name}</h3>
                 <GuestsEditor
                     guests={user.guests}
-                    allowedGuests={user.allowedGuests}
+                    store={this.props.store}
+                    allowedGuests={user.allowed_guests}
                     onGuestAdd={this.addGuest.bind(this)}
+                    onGuestDelete={this.deleteGuest.bind(this)}
                 />
             </div>
         )

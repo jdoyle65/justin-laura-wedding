@@ -9,6 +9,7 @@ var config = {
         'whatwg-fetch',
         APP_DIR + '/index.jsx'
     ],
+    devtool: 'source-map',
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'

@@ -12,6 +12,7 @@ export default class EnterTokenScene extends React.Component {
         };
     }
 
+
     onSubmitUserToken() {
         const userToken = this.refs.userTokenInput.value;
 
@@ -19,7 +20,8 @@ export default class EnterTokenScene extends React.Component {
             .then(response => {
                 this.props.store.update({
                     userToken: userToken,
-                    user: response.userData
+                    user: response.user_data,
+                    weddingData: response.wedding_data
                 }, () => {
                     this.props.router.go('dashboard');
                 });
@@ -33,6 +35,7 @@ export default class EnterTokenScene extends React.Component {
     checkUserToken(userToken) {
         if(userToken === 'valid') {
             window.localStorage.setItem('userToken', userToken);
+            console.log(WeddingApi.user());
             return WeddingApi.user();
         } else {
             return Promise.reject();

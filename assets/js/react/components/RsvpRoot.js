@@ -46,7 +46,8 @@ export default class RsvpRoot extends React.Component {
             WeddingApi.user().then(response => {
                 const newStore = Object.assign({}, this.state.store, {
                     userToken: userToken,
-                    user: response.userData
+                    user: response.user_data,
+                    weddingData: response.wedding_data
                 });
 
                 this.setState({
